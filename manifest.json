@@ -1,6 +1,18 @@
 {
   "name": "No Tweet",
   "version": "1.0",
-  "description": "Offers Twitter users alternative forms of express",
+  "description": "Offers Twitter users alternative forms of expression",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://twitter.com/*"],
+      "css": ["twitter_buttons.css"],
+      "js": ["addbuttons.js"]
+    }
+  ],
+  "permissions": ["storage"],
   "manifest_version": 2
 }
