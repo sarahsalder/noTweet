@@ -1,6 +1,6 @@
 let toolbars = document.getElementsByClassName("TweetBoxToolbar");
 
-function addButtons(thing) {
+function addButtons(toolbar) {
   let buttons = [
     {
       name : document.createTextNode("Text a Friend")
@@ -15,10 +15,11 @@ function addButtons(thing) {
   for (let el of buttons) {
     var button = document.createElement("button");
     button.appendChild(el.name);
-    thing.appendChild(button);
+    button.classList.add('no-tweet-button')
+    toolbar.appendChild(button);
   }
 }
 
 for (let toolbar of toolbars) {
-  addButtons(toolbar)
+  addButtons(toolbar);
 }
