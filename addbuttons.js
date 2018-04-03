@@ -4,12 +4,15 @@ function addButtons(toolbar) {
   let buttons = [
     {
       name : document.createTextNode("Text a Friend")
+      //opens messenger
     },
     {
-      name : document.createTextNode("Tell Your Therapist Later")
+      name : document.createTextNode("Tell Your Therapist")
+      // opens an email client
     },
     {
-      name : document.createTextNode("Write an Op-Ed")
+      name : document.createTextNode("Let it Go")
+      // fetches a random puppy image from giphy
     }
   ]
   for (let el of buttons) {
