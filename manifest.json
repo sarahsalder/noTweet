@@ -13,6 +13,8 @@
       "js": ["addbuttons.js"]
     }
   ],
-  "permissions": ["storage"],
+  "permissions": [
+    "https://api.giphy.com/*"
+],
   "manifest_version": 2
 }
