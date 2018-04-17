@@ -3,14 +3,14 @@ let icons = document.getElementsByClassName("icon-btn");
 let tweetButtons = document.getElementsByClassName("tweet-action");
 
 const ghandiQuotes = [
-  'You must be the change you wish to see in the world. – Mahatma Gandhi',
-  'The weak can never forgive. Forgiveness is the attribute of the strong. – Mahatma Gandhi',
-  'Happiness is when what you think, what you say, and what you do are in harmony. – Mahatma Gandhi',
-  'An eye for eye only ends up making the whole world blind. – Mahatma Gandhi',
-  'Live as if you were to die tomorrow; learn as if you were to live forever. – Mahatma Gandhi',
-  'First they ignore you, then they laugh at you, then they fight you, then you win. – Mahatma Gandhi',
-  'You must not lose faith in humanity. Humanity is an ocean; if a few drops of the ocean are dirty, the ocean does not become dirty. – Mahatma Gandhi',
-  'The best way to find yourself is to lose yourself in the service of others. – Mahatma Gandhi'
+  'You must be the change you wish to see in the world.',
+  'The weak can never forgive. Forgiveness is the attribute of the strong.',
+  'Happiness is when what you think, what you say, and what you do are in harmony.',
+  'An eye for eye only ends up making the whole world blind.',
+  'Live as if you were to die tomorrow; learn as if you were to live forever.',
+  'First they ignore you, then they laugh at you, then they fight you, then you win.',
+  'You must not lose faith in humanity. Humanity is an ocean; if a few drops of the ocean are dirty, the ocean does not become dirty.',
+  'The best way to find yourself is to lose yourself in the service of others.'
 ]
 
 function addButtons(toolbar) {
@@ -27,17 +27,40 @@ function addButtons(toolbar) {
       type: 'transcendence',
       name : document.createTextNode("Let it Go"), 
       action: function() {
-        const randomPosition = Math.floor(Math.random()*ghandiQuotes.length);
-        const content = ghandiQuotes[randomPosition];
-        const gif = '<blockquote class="imgur-embed-pub" lang="en" data-id="a/yF1gV"><a href="//imgur.com/yF1gV"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>';
+
+
         const body = document.getElementsByTagName('body')[0]
-        body.innerHTML = content; 
-        body.style.textAlign = 'center';
-        body.style.top = '40%';
-        body.style.maxWidth = '606px';
-        body.style.margin = '0 auto';
-        body.style.fontSize = '25px';
-        boyd.style.fontStyle = 'italic';
+        while (body.firstChild) {
+            body.removeChild(body.firstChild);
+        }
+
+        const randomPosition = Math.floor(Math.random()*ghandiQuotes.length);
+        var div = document.createElement('div');
+        const content = ghandiQuotes[randomPosition];
+        div.innerHTML = content;
+
+        body.appendChild(div);
+        div.classList.add('quote')
+
+        var speaker = document.createElement('div');
+        speaker.innerHTML = '&hearts; Mahatma Gandhi';
+        speaker.classList.add('speaker');
+        body.appendChild(speaker);
+
+        var img = document.createElement("img");
+        img.style.position = 'absolute';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.top = "0";
+        var imgURL = chrome.extension.getURL("fire.gif");
+        img.src = imgURL;
+
+      
+        body.appendChild(img);
+
+        fade(img);
+
+        // body.appendChild(img)
       }
     }
   ]
@@ -60,6 +83,19 @@ function addButtons(toolbar) {
 function removePadding(icon) {
   icon.style.padding = '2px';
   icon.style.margin = '2px';
+}
+
+function fade(element) {
+  var op = 1;  // initial opacity
+  var timer = setInterval(function () {
+      if (op <= 0.3){
+          clearInterval(timer);
+          // element.style.display = 'none';
+      }
+      element.style.opacity = op;
+      element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+      op -= op * 0.1;
+  }, 100);
 }
 
 for (let toolbar of toolbars) {

@@ -6,7 +6,7 @@
     "scripts": ["background.js"],
     "persistent": false
   },
-  "web_accessible_resources": ["cat.jpg"],  
+  "web_accessible_resources": ["fire.gif"],  
   "content_scripts": [
     {
       "matches": ["https://twitter.com/*"],
