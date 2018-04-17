@@ -1,11 +1,7 @@
 {
   "name": "Tweet Control",
-  "version": "1.0",
+  "version": "0.0.1",
   "description": "Maybe you shouldn't... tweet... that??",
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
   "web_accessible_resources": ["fire.gif"],  
   "content_scripts": [
     {
@@ -15,8 +11,10 @@
       "run_at": "document_end"
     }
   ],
-  "permissions": [
-    "https://api.giphy.com/*"
-],
-  "manifest_version": 2
+  "icons": { 
+    "16": "kiwi16.png",
+    "48": "kiwi32.png",
+   "128": "kiwi128.png" 
+  },
+  "manifest_version": 3
 }

@@ -59,8 +59,6 @@ function addButtons(toolbar) {
         body.appendChild(img);
 
         fade(img);
-
-        // body.appendChild(img)
       }
     }
   ]
@@ -86,11 +84,10 @@ function removePadding(icon) {
 }
 
 function fade(element) {
-  var op = 1;  // initial opacity
+  var op = 1;  
   var timer = setInterval(function () {
       if (op <= 0.3){
           clearInterval(timer);
-          // element.style.display = 'none';
       }
       element.style.opacity = op;
       element.style.filter = 'alpha(opacity=' + op * 100 + ")";
@@ -113,17 +110,4 @@ for (let button of tweetButtons) {
   button.classList.add('EdgeButton');
   button.classList.add('EdgeButton--primary');
   button.classList.add('js-tweet-btn');
-}
-
-// const tweetButton = document.getElementsByClassName("TweetBoxToolbar-tweetButton");
-// tweetButton.style.marginLeft = '10px'
-// tweetButton.style.marginRight = '0px'
-
-function addPicToTweet() {
-  // url argument can be something like 'https://api.github.com/users/daspinola/repos'
-
-    function request(url) {
-      
-    }
-
 }
