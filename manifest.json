@@ -1,6 +1,6 @@
 {
   "name": "Tweet Control",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Maybe you shouldn't... tweet... that??",
   "web_accessible_resources": ["fire.gif"],  
   "content_scripts": [
@@ -12,9 +12,9 @@
     }
   ],
   "icons": { 
-    "16": "kiwi16.png",
+    "16": "kiwi.png",
     "48": "kiwi32.png",
    "128": "kiwi128.png" 
   },
-  "manifest_version": 3
+  "manifest_version": 2
 }
