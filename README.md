@@ -1,5 +1,7 @@
 # Tweet Control
 
+https://chrome.google.com/webstore/detail/tweet-control/ahioipmeannonooeiehbhmmbdfckekod
+
 Maybe you shouldn't... tweet... that??
 We've all been there. Something ridiculous happens in the world, or our personal life, and we go to Twitter. But some things may be better suited for DMs or just let go. 
 
